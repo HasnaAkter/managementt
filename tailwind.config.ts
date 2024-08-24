@@ -53,6 +53,7 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
         blue: "#0000FF", 
+        _gray:"#808080",
         _base:"#6AB4B5",         // Blue background
         _primary: "#FF0000",        // Red primary color
         _secondary: "#FFFFFF",      // White secondary color
@@ -60,6 +61,11 @@ const config = {
         _white: "#FFFFFF",          // White
         _black: "#000000",          // Black
       },
+      fontWeight: {
+        medium: "500", // Medium font weight
+        bold: "700", // Bold font weight
+      },
+    
       fontSize: {
         8: "8px",
         10: "10px",

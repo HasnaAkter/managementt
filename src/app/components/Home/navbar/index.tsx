@@ -1,6 +1,7 @@
 // components/Navbar.js
 "use client";
 import { useState } from "react";
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,14 +12,14 @@ const Navbar = () => {
 
   return (
     <nav className="bg-_base">
-      <div className="mx-auto max-w-7xl px-2 text-8">
-        <div className="relative flex h-16 items-center justify-between sm:justify-between">
-          {/* Right Side (now includes Mobile menu button) */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative flex h-16 items-center justify-between">
+
+          {/* Right Side (Mobile menu button) */}
           <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
-            {/* Mobile menu button */}
             <button
               type="button"
-              className="relative inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="relative inline-flex bg-_gray items-center justify-center rounded-md p-2 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
               aria-expanded={isMobileMenuOpen}
               onClick={toggleMobileMenu}
@@ -52,12 +53,20 @@ const Navbar = () => {
 
           {/* Center Section (Logo and Navigation Links) */}
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-          <button
+            <button
               type="button"
               className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
             >
-              <span className="absolute -inset-1.5" aria-hidden="true"></span>
+              <span className="absolute -inset-1.5" aria-hidden="true"> <Image
+                src="/public/assets/image/83775881.jpg"
+                alt="Logo"
+                width={100}
+                height={100}
+               
+              /></span>
+              
               <span className="sr-only">View notifications</span>
+             
               <svg
                 className="h-6 w-6"
                 fill="none"
@@ -86,75 +95,64 @@ const Navbar = () => {
               >
                 <span className="absolute -inset-1.5" aria-hidden="true"></span>
                 <span className="sr-only">Open user menu</span>
-                <img
-                  className="h-8 w-8 rounded-full"
-                  src=""
-                  alt="Profile"
-                />
               </button>
 
               {/* Dropdown menu */}
               <div
-                className={`absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${
-                  isUserMenuOpen ? "block" : "hidden"
-                }`}
+                className={`absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${isUserMenuOpen ? "block" : "hidden"
+                  }`}
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="user-menu-button"
               >
-                <a href="#" className="block px-4 py-2 text-14 text-gray-700" role="menuitem">
+                <a href="#" className="block px-4 py-2 text-14" role="menuitem">
                   Your Profile
                 </a>
-                <a href="#" className="block px-4 py-2 text-14 text-gray-700" role="menuitem">
+                <a href="#" className="block px-4 py-2 text-14" role="menuitem">
                   Settings
                 </a>
-                <a href="#" className="block px-4 py-2 text-14 text-gray-700" role="menuitem">
+                <a href="#" className="block px-4 py-2 text-14" role="menuitem">
                   Sign out
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Left Side (now includes User menu and Notifications) */}
+          {/* Left Side (User menu and Notifications) */}
           <div className="absolute inset-y-0 left-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-          <div className="flex flex-shrink-0 items-center">
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                alt="Your Company"
-              />
+            <div className="flex flex-shrink-0 items-center">
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
                 {/* Navigation Links */}
                 <a
                   href="#"
-                  className="rounded-md bg-gray-900 px-3 py-2 text-14 font-medium text-white"
+                  className="rounded-md font-bold px-3 py-2 text-14 text-16 text-_black bg-_gray"
                   aria-current="page"
                 >
                   Bio
                 </a>
                 <a
                   href="#"
-                  className="rounded-md px-3 py-2 text-14 font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  className="rounded-md font-bold px-3 py-2 text-14 text-16 text-_black hover:bg-gray-700 hover:text-white"
                 >
                   Media
                 </a>
                 <a
                   href="#"
-                  className="rounded-md px-3 py-2 text-14 font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  className="rounded-md px-3 py-2 text-14 text-16 text-_black font-bold hover:bg-gray-700 hover:text-white"
                 >
                   Tour
                 </a>
                 <a
                   href="#"
-                  className="rounded-md px-3 py-2 text-14 font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  className="rounded-md px-3 py-2 text-14 text-16 font-bold text-_black hover:bg-gray-700 hover:text-white"
                 >
                   Blog
                 </a>
                 <a
                   href="#"
-                  className="rounded-md px-3 py-2 text-14 font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  className="rounded-md px-3 py-2 font-bold text-14 text-_black hover:bg-gray-700 hover:text-white"
                 >
                   Connect
                 </a>
@@ -172,26 +170,26 @@ const Navbar = () => {
         <div className="space-y-1 px-2 pb-3 pt-2">
           <a
             href="#"
-            className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+            className="block rounded-md px-3 py-2 text-16 text-white"
             aria-current="page"
           >
             Dashboard
           </a>
           <a
             href="#"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+            className="block rounded-md px-3 py-2 font-bold text-16 text-_black hover:bg-gray-700 hover:text-white"
           >
             Team
           </a>
           <a
             href="#"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+            className="block rounded-md px-3 py-2 text-16 text-_black hover:bg-gray-700 hover:text-white"
           >
             Projects
           </a>
           <a
             href="#"
-            className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+            className="block rounded-md px-3 py-2 text-16 text-_black hover:bg-gray-700 hover:text-white"
           >
             Calendar
           </a>
