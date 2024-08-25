@@ -6,6 +6,7 @@ const HomePages = () => {
     return (
         <div>
             <Banner />
+            bhjm
            
         </div>
     );
