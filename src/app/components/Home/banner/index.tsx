@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Banner() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-16 px-4 sm:px-6 lg:p-8">
       {/* Left side (Image) */}
       <div className="flex justify-center items-center animate-zoomIn">
         <Image

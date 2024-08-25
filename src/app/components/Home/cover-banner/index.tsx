@@ -1,76 +1,32 @@
-"use client"
+"use client";
 import React from 'react';
 
 const CoverBanner = () => {
     return (
-        <div id="header" className="cf">
-            <div className="page-width">
-                <h1 id="site-title">
-                    <a href="http://html5backgroundvideos.com" target="_blank" rel="noopener noreferrer">
-                        <span className="title">BG Stock</span>
-                        <span className="subtitle">HTML5 Background Videos</span>
-                    </a>
-                </h1>
-            </div>
-
+        <div id="header" className=" py-8">
             {/* Start video hero */}
-            <div className="video-hero jquery-background-video-wrapper demo-video-wrapper">
+            <div
+                className="relative h-[500px] overflow-hidden bg-center bg-cover"
+
+            >
                 <video
-                    className="jquery-background-video"
+                    className="absolute inset-0 w-auto h-auto min-w-full min-h-full max-w-none"
                     autoPlay
                     muted
                     loop
-                    poster="https://d2ezlykacdqcnj.cloudfront.net/_assets/home-video/beach-waves-loop.jpg"
+                    poster="https://t4.ftcdn.net/jpg/01/88/53/19/240_F_188531911_OT2zuKgdK9pS0oalRoA5SFWYNswHjMJy.jpg"
                 >
-                    <source
-                        src="https://d2ezlykacdqcnj.cloudfront.net/_assets/home-video/beach-waves-loop.mp4"
-                        type="video/mp4"
-                    />
-                    <source
-                        src="https://d2ezlykacdqcnj.cloudfront.net/_assets/home-video/beach-waves-loop.webm"
-                        type="video/webm"
-                    />
-                    <source
-                        src="https://d2ezlykacdqcnj.cloudfront.net/_assets/home-video/beach-waves-loop.ogv"
-                        type="video/ogg"
-                    />
+
                 </video>
-                <div className="video-overlay"></div>
-                <div className="page-width">
-                    <div className="video-hero--content">
-                        <h2>Background Video Demo</h2>
-                        <p>Full width video hero</p>
+                <div className="absolute inset-0 bg-black opacity-50"></div>
+                <div className="relative flex items-center justify-center h-full text-center text-white">
+                    <div className="px-4">
+                        <h2 className="text-4xl font-bold mb-4">FrontEnd Developer</h2>
+                        <p className="text-xl">I am a passionate</p>
                     </div>
                 </div>
             </div>
             {/* End video hero */}
-
-            <div id="content">
-                <div className="page-width">
-                    <h3>Easy Background Videos</h3>
-                    <p>
-                        This page uses the{' '}
-                        <a
-                            href="https://github.com/BGStock/jquery-background-video"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            jQuery Background Video
-                        </a>{' '}
-                        plugin along with some simple html and css to generate this background video.
-                    </p>
-                    <p>
-                        The video overlay pattern is available at{' '}
-                        <a
-                            href="http://html5backgroundvideos.com/pattern-overlays/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            http://html5backgroundvideos.com/pattern-overlays/
-                        </a>
-                    </p>
-                </div>
-            </div>
         </div>
     );
 };
