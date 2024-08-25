@@ -6,7 +6,7 @@ const HomePages = () => {
     return (
         <div>
             <Banner />
-            bhjm
+            <h1></h1>
            
         </div>
     );
