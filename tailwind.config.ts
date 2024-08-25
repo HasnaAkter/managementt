@@ -54,7 +54,7 @@ const config = {
         },
         blue: "#0000FF", 
         _gray:"#808080",
-        _base:"#6AB4B5",         // Blue background
+        _base:"#D6E6E2",         // Blue background
         _primary: "#FF0000",        // Red primary color
         _secondary: "#FFFFFF",      // White secondary color
         _red: "#FF0000",            // Red

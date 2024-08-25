@@ -1,4 +1,4 @@
-import Banner from "@/pages/Banner";
+
 import HomePages from "./components/Home/home";
 
 

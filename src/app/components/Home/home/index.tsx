@@ -1,10 +1,12 @@
-import Banner from '@/pages/Banner';
+
 import React from 'react';
+import Banner from '../banner';
 
 const HomePages = () => {
     return (
         <div>
-           <Banner/>
+            <Banner />
+           
         </div>
     );
 };
