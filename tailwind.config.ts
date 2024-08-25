@@ -1,7 +1,8 @@
 import type { Config } from "tailwindcss";
 
-const config = {
+const config: Config = {
   darkMode: ["class"],
+
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -54,18 +55,17 @@ const config = {
         },
         blue: "#0000FF", 
         _gray:"#808080",
-        _base:"#D6E6E2",         // Blue background
-        _primary: "#FF0000",        // Red primary color
-        _secondary: "#FFFFFF",      // White secondary color
-        _red: "#FF0000",            // Red
-        _white: "#FFFFFF",          // White
-        _black: "#000000",          // Black
+        _base:"#D6E6E2",         // Background color
+        _primary: "#FF0000",        // Primary color
+        _secondary: "#FFFFFF",      // Secondary color
+        _red: "#FF0000",            // Red color
+        _white: "#FFFFFF",          // White color
+        _black: "#000000",          // Black color
       },
       fontWeight: {
         medium: "500", // Medium font weight
         bold: "700", // Bold font weight
       },
-    
       fontSize: {
         8: "8px",
         10: "10px",
@@ -90,14 +90,20 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        zoomIn: {
+          "0%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.05)" }, // Adjust scale as needed
+          "100%": { transform: "scale(1)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        zoomIn: "zoomIn 3s ease-in-out infinite",
       },
     },
   },
   plugins: [require("tailwindcss-animate"), require('daisyui')],
-} satisfies Config;
+};
 
 export default config;

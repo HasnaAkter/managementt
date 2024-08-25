@@ -1,25 +1,26 @@
+"use client";
 import Image from 'next/image';
 
 export default function Banner() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-20">
       {/* Left side (Image) */}
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center animate-zoomIn">
         <Image
-          src="/path/to/your/image.jpg" // Replace with your image path
-          alt="Description of the image"
-          width={500} // Adjust the width as needed
-          height={500} // Adjust the height as needed
-          className="rounded-lg shadow-lg"
+          src="/assets/image/hena.jpg" 
+          alt="Banner Image"
+          className="dark:invert rounded-full px-2"
+          width={800}
+          height={800}
+          priority
         />
       </div>
       
       {/* Right side (Text) */}
       <div className="flex flex-col justify-center items-start">
-        <h2 className="text-3xl font-bold mb-4">Your Title Here</h2>
-        <p className="text-lg text-gray-600">
-          Your text content goes here. You can include as much text as you need, and it will align
-          nicely next to the image.
+        <h2 className="lg:text-22 text-14 text-_gray font-bold p-2">Hasna Hena</h2>
+        <p className="text-12 text-_black text-justify p-2">
+          I am a passionate frontend developer specializing in React and Next.js. With a keen eye for design and a knack for creating intuitive user interfaces, I bring projects to life with dynamic and responsive web applications. My expertise includes crafting scalable and performant applications, leveraging modern JavaScript libraries, and optimizing user experiences. I am always eager to take on new challenges and continuously enhance my skills.
         </p>
       </div>
     </div>

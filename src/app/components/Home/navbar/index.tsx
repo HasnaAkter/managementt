@@ -1,4 +1,3 @@
-// components/Navbar.js
 "use client";
 import { useState } from "react";
 import Image from 'next/image';
@@ -11,20 +10,37 @@ const Navbar = () => {
   const toggleUserMenu = () => setIsUserMenuOpen(!isUserMenuOpen);
 
   return (
-    <nav className="bg-_base">
+    <nav className="bg-_base fixed top-0 left-0 right-0 z-50 shadow-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
 
-          {/* Right Side (Mobile menu button) */}
+          {/* Left Side (Logo) */}
+          <div className="flex items-center sm:items-stretch sm:justify-start">
+            <button
+              type="button"
+              className="relative flex items-center justify-center rounded-full p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
+            >
+              <span className="sr-only">View notifications</span>
+              <Image
+                src="/assets/image/logo.jpg" // Corrected path
+                alt="Logo"
+                className="rounded"
+                width={40}
+                height={40}
+                priority
+              />
+            </button>
+          </div>
+
+          {/* Right Side (Mobile menu button and Profile dropdown) */}
           <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
             <button
               type="button"
-              className="relative inline-flex bg-_gray items-center justify-center rounded-md p-2 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
               aria-expanded={isMobileMenuOpen}
               onClick={toggleMobileMenu}
             >
-              <span className="absolute -inset-0.5" aria-hidden="true"></span>
               <span className="sr-only">Open main menu</span>
               {/* Icon when menu is closed */}
               <svg
@@ -51,112 +67,71 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Center Section (Logo and Navigation Links) */}
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <button
-              type="button"
-              className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+          {/* Center Section (Navigation Links) */}
+          <div className="hidden sm:flex sm:items-center sm:justify-center sm:space-x-4">
+            <a
+              href="#"
+              className="rounded-md px-3 py-2 text-sm font-bold text-_black bg-_gray hover:bg-gray-700 hover:text-white"
+              aria-current="page"
             >
-              <span className="absolute -inset-1.5" aria-hidden="true"> <Image
-                src="/public/assets/image/83775881.jpg"
-                alt="Logo"
-                width={100}
-                height={100}
-               
-              /></span>
-              
-              <span className="sr-only">View notifications</span>
-             
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-                />
-              </svg>
-            </button>
-
-            {/* Profile dropdown */}
-            <div className="relative ml-3">
-              <button
-                type="button"
-                className="relative flex rounded-full bg-gray-800 text-14 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                id="user-menu-button"
-                aria-expanded={isUserMenuOpen}
-                aria-haspopup="true"
-                onClick={toggleUserMenu}
-              >
-                <span className="absolute -inset-1.5" aria-hidden="true"></span>
-                <span className="sr-only">Open user menu</span>
-              </button>
-
-              {/* Dropdown menu */}
-              <div
-                className={`absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${isUserMenuOpen ? "block" : "hidden"
-                  }`}
-                role="menu"
-                aria-orientation="vertical"
-                aria-labelledby="user-menu-button"
-              >
-                <a href="#" className="block px-4 py-2 text-14" role="menuitem">
-                  Your Profile
-                </a>
-                <a href="#" className="block px-4 py-2 text-14" role="menuitem">
-                  Settings
-                </a>
-                <a href="#" className="block px-4 py-2 text-14" role="menuitem">
-                  Sign out
-                </a>
-              </div>
-            </div>
+              Bio
+            </a>
+            <a
+              href="#"
+              className="rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-gray-700 hover:text-white"
+            >
+              Media
+            </a>
+            <a
+              href="#"
+              className="rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-gray-700 hover:text-white"
+            >
+              Tour
+            </a>
+            <a
+              href="#"
+              className="rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-gray-700 hover:text-white"
+            >
+              Blog
+            </a>
+            <a
+              href="#"
+              className="rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-gray-700 hover:text-white"
+            >
+              Connect
+            </a>
           </div>
 
-          {/* Left Side (User menu and Notifications) */}
-          <div className="absolute inset-y-0 left-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <div className="flex flex-shrink-0 items-center">
-            </div>
-            <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4">
-                {/* Navigation Links */}
-                <a
-                  href="#"
-                  className="rounded-md font-bold px-3 py-2 text-14 text-16 text-_black bg-_gray"
-                  aria-current="page"
-                >
-                  Bio
-                </a>
-                <a
-                  href="#"
-                  className="rounded-md font-bold px-3 py-2 text-14 text-16 text-_black hover:bg-gray-700 hover:text-white"
-                >
-                  Media
-                </a>
-                <a
-                  href="#"
-                  className="rounded-md px-3 py-2 text-14 text-16 text-_black font-bold hover:bg-gray-700 hover:text-white"
-                >
-                  Tour
-                </a>
-                <a
-                  href="#"
-                  className="rounded-md px-3 py-2 text-14 text-16 font-bold text-_black hover:bg-gray-700 hover:text-white"
-                >
-                  Blog
-                </a>
-                <a
-                  href="#"
-                  className="rounded-md px-3 py-2 font-bold text-14 text-_black hover:bg-gray-700 hover:text-white"
-                >
-                  Connect
-                </a>
-              </div>
+          {/* Profile dropdown */}
+          <div className="relative hidden sm:flex items-center">
+            <button
+              type="button"
+              className="relative flex rounded-full bg-gray-800 p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
+              id="user-menu-button"
+              aria-expanded={isUserMenuOpen}
+              aria-haspopup="true"
+              onClick={toggleUserMenu}
+            >
+              <span className="sr-only">Open user menu</span>
+            </button>
+
+            {/* Dropdown menu */}
+            <div
+              className={`absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${isUserMenuOpen ? "block" : "hidden"
+                }`}
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="user-menu-button"
+            >
+              <a href="#" className="block px-4 py-2 text-sm" role="menuitem">
+                Your Profile
+              </a>
+              <a href="#" className="block px-4 py-2 text-sm" role="menuitem">
+                Settings
+              </a>
+              <a href="#" className="block px-4 py-2 text-sm" role="menuitem">
+                Sign out
+              </a>
             </div>
           </div>
         </div>
@@ -170,26 +145,26 @@ const Navbar = () => {
         <div className="space-y-1 px-2 pb-3 pt-2">
           <a
             href="#"
-            className="block rounded-md px-3 py-2 text-16 text-white"
+            className="block rounded-md px-3 py-2 text-sm font-bold text-white bg-_black hover:bg-gray-700"
             aria-current="page"
           >
             Dashboard
           </a>
           <a
             href="#"
-            className="block rounded-md px-3 py-2 font-bold text-16 text-_black hover:bg-gray-700 hover:text-white"
+            className="block rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-gray-700 hover:text-white"
           >
             Team
           </a>
           <a
             href="#"
-            className="block rounded-md px-3 py-2 text-16 text-_black hover:bg-gray-700 hover:text-white"
+            className="block rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-gray-700 hover:text-white"
           >
             Projects
           </a>
           <a
             href="#"
-            className="block rounded-md px-3 py-2 text-16 text-_black hover:bg-gray-700 hover:text-white"
+            className="block rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-gray-700 hover:text-white"
           >
             Calendar
           </a>
