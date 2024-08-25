@@ -57,7 +57,6 @@ const config: Config = {
         _gray:"#808080",
         _base:"#D6E6E2",         // Background color
         _primary: "#FF0000",        // Primary color
-        _secondary: "#FFFFFF",      // Secondary color
         _red: "#FF0000",            // Red color
         _white: "#FFFFFF",          // White color
         _black: "#000000",          // Black color

@@ -71,32 +71,32 @@ const Navbar = () => {
           <div className="hidden sm:flex sm:items-center sm:justify-center sm:space-x-4">
             <a
               href="#"
-              className="rounded-md px-3 py-2 text-sm font-bold text-_black bg-_gray hover:bg-gray-700 hover:text-white"
+              className="rounded-md px-3 py-2 text-sm font-bold text-_black bg-_white hover:bg-_gray hover:text-_white"
               aria-current="page"
             >
-              Bio
+              Home
             </a>
             <a
               href="#"
-              className="rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-gray-700 hover:text-white"
+              className="rounded-md px-3 py-2 text-sm font-bold text-_black  hover:bg-_gray hover:text-_white"
             >
               Media
             </a>
             <a
               href="#"
-              className="rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-gray-700 hover:text-white"
+              className="rounded-md px-3 py-2 text-sm font-bold text-_black  hover:bg-_gray hover:text-_white"
             >
               Tour
             </a>
             <a
               href="#"
-              className="rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-gray-700 hover:text-white"
+              className="rounded-md px-3 py-2 text-sm font-bold text-_black  hover:bg-_gray hover:text-_white"
             >
               Blog
             </a>
             <a
               href="#"
-              className="rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-gray-700 hover:text-white"
+              className="rounded-md px-3 py-2 text-sm font-bold text-_black  hover:bg-_gray hover:text-_white"
             >
               Connect
             </a>
@@ -116,7 +116,7 @@ const Navbar = () => {
             </button>
 
             {/* Dropdown menu */}
-            <div
+            {/* <div
               className={`absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${isUserMenuOpen ? "block" : "hidden"
                 }`}
               role="menu"
@@ -132,7 +132,7 @@ const Navbar = () => {
               <a href="#" className="block px-4 py-2 text-sm" role="menuitem">
                 Sign out
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -67,3 +67,60 @@
     @apply bg-background text-foreground;
   }
 }
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.photobanner {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.photobanner div {
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.photobanner .first {
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.question-and-answer {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.qa-item {
+  margin-bottom: 10px;
+}
+
+.question-button {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.answer {
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fafafa;
+}
