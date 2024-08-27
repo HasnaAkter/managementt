@@ -18,7 +18,9 @@ const config: Config = {
         "2xl": "1400px",
       },
     },
+    
     extend: {
+      
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -81,6 +83,9 @@ const config: Config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      }, slideIn: {
+        '0%': { transform: 'translateX(100%)' },
+        '100%': { transform: 'translateX(0)' },
       },
       keyframes: {
         "accordion-down": {
