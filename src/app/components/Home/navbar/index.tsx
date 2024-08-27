@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import Image from 'next/image';
+import Link from "next/link";
+import { MdArrowDropDownCircle } from "react-icons/md";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -69,37 +71,37 @@ const Navbar = () => {
 
           {/* Center Section (Navigation Links) */}
           <div className="hidden sm:flex sm:items-center sm:justify-center sm:space-x-4">
-            <a
-              href="#"
+            <Link
+              href="/"
               className="rounded-md px-3 py-2 text-sm font-bold text-_black bg-_white hover:bg-_gray hover:text-_white"
               aria-current="page"
             >
               Home
-            </a>
-            <a
-              href="#"
-              className="rounded-md px-3 py-2 text-sm font-bold text-_black  hover:bg-_gray hover:text-_white"
+            </Link>
+            <Link
+              href="/media"
+              className="rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-_gray hover:text-_white"
             >
               Media
-            </a>
-            <a
-              href="#"
-              className="rounded-md px-3 py-2 text-sm font-bold text-_black  hover:bg-_gray hover:text-_white"
+            </Link>
+            <Link
+              href="/tour"
+              className="rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-_gray hover:text-_white"
             >
               Tour
-            </a>
-            <a
-              href="#"
-              className="rounded-md px-3 py-2 text-sm font-bold text-_black  hover:bg-_gray hover:text-_white"
+            </Link>
+            <Link
+              href="/blog"
+              className="rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-_gray hover:text-_white"
             >
               Blog
-            </a>
-            <a
-              href="#"
-              className="rounded-md px-3 py-2 text-sm font-bold text-_black  hover:bg-_gray hover:text-_white"
+            </Link>
+            <Link
+              href="/connect"
+              className="rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-_gray hover:text-_white"
             >
               Connect
-            </a>
+            </Link>
           </div>
 
           {/* Profile dropdown */}
@@ -115,24 +117,7 @@ const Navbar = () => {
               <span className="sr-only">Open user menu</span>
             </button>
 
-            {/* Dropdown menu */}
-            {/* <div
-              className={`absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${isUserMenuOpen ? "block" : "hidden"
-                }`}
-              role="menu"
-              aria-orientation="vertical"
-              aria-labelledby="user-menu-button"
-            >
-              <a href="#" className="block px-4 py-2 text-sm" role="menuitem">
-                Your Profile
-              </a>
-              <a href="#" className="block px-4 py-2 text-sm" role="menuitem">
-                Settings
-              </a>
-              <a href="#" className="block px-4 py-2 text-sm" role="menuitem">
-                Sign out
-              </a>
-            </div> */}
+           
           </div>
         </div>
       </div>
@@ -143,31 +128,37 @@ const Navbar = () => {
         id="mobile-menu"
       >
         <div className="space-y-1 px-2 pb-3 pt-2">
-          <a
-            href="#"
+          <Link
+            href="/"
             className="block rounded-md px-3 py-2 text-sm font-bold text-white bg-_black hover:bg-gray-700"
             aria-current="page"
           >
-            Dashboard
-          </a>
-          <a
-            href="#"
+              Home
+          </Link>
+          <Link
+            href="/team"
             className="block rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-gray-700 hover:text-white"
           >
-            Team
-          </a>
-          <a
-            href="#"
+             Media
+          </Link>
+          <Link
+            href="/projects"
             className="block rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-gray-700 hover:text-white"
           >
-            Projects
-          </a>
-          <a
-            href="#"
+             Tour
+          </Link>
+          <Link
+            href="/calendar"
             className="block rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-gray-700 hover:text-white"
           >
-            Calendar
-          </a>
+             Blog
+          </Link>
+          <Link
+            href="/calendar"
+            className="block rounded-md px-3 py-2 text-sm font-bold text-_black hover:bg-gray-700 hover:text-white"
+          >
+            Connect
+          </Link>
         </div>
       </div>
     </nav>

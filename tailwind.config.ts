@@ -18,7 +18,9 @@ const config: Config = {
         "2xl": "1400px",
       },
     },
+    
     extend: {
+      
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -55,11 +57,13 @@ const config: Config = {
         },
         blue: "#0000FF", 
         _gray:"#808080",
+        _gray_light:"#dadada",
         _base:"#D6E6E2",         // Background color
         _primary: "#FF0000",        // Primary color
         _red: "#FF0000",            // Red color
         _white: "#FFFFFF",          // White color
-        _black: "#000000",          // Black color
+        _black: "#000000", 
+        _yellow_gray:"#E4DCBF",         
       },
       fontWeight: {
         medium: "500", // Medium font weight
@@ -79,6 +83,9 @@ const config: Config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      }, slideIn: {
+        '0%': { transform: 'translateX(100%)' },
+        '100%': { transform: 'translateX(0)' },
       },
       keyframes: {
         "accordion-down": {

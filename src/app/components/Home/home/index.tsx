@@ -6,6 +6,7 @@ import Project from '../project';
 import Bio from '../bio';
 import QuestionAndAnswer from '../QandA';
 import CoverBanner from '../cover-banner';
+import Story from '../story';
 
 const HomePages = () => {
     return (
@@ -16,6 +17,7 @@ const HomePages = () => {
             <Project />
             <Bio />
             <QuestionAndAnswer />
+            <Story/>
 
         </div>
     );
