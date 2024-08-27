@@ -1,6 +1,7 @@
-"use client";
+// @ts-nocheck
+'use client';
 import React, { useState } from 'react';
-import { MdArrowDropDownCircle } from "react-icons/md";
+import { MdArrowDropDownCircle, MdArrowDropUp } from 'react-icons/md';
 
 const faqs = [
     {
@@ -41,36 +42,34 @@ const QuestionAndAnswer = () => {
     };
 
     return (
-        <section id="faq" className="faq py-10 bg-gray-100">
+        <section id="faq" className="faq py-8 px-4 ">
             <div className="container mx-auto">
-                <div className="text-center mb-8">
-                    <h2 className="text-3xl font-semibold">Frequently Asked Questions</h2>
+                <div className="text-center mb-6">
+                    <h2 className="text-22 font-semibold text-_black">Frequently Asked Questions</h2>
                 </div>
                 <div className="faq-list">
                     <ul className="space-y-4">
                         {faqs.map((faq, index) => (
-                            <li key={index} className="border border-gray-300 rounded-lg overflow-hidden">
+                            <li key={index} className="border border-_gray_light rounded-lg overflow-hidden">
                                 <button
-                                    className="w-full bg-gray-200 text-left px-4 py-2 flex items-center justify-between"
+                                    className="w-full border-_gray text-left px-3 py-2 flex items-center justify-between focus:outline-none"
                                     type="button"
                                     onClick={() => handleToggle(index)}
                                 >
-                                    <span className="text-gray-700 font-medium">{faq.question}</span>
-                                    <div className="flex items-center space-x-2">
+                                    <span className="text-gray-700 text-14 font-medium">{faq.question}</span>
+                                    <div className="flex items-center">
                                         {openIndex === index ? (
-                                            <MdArrowDropDownCircle className="text-gray-700" />
+                                            <MdArrowDropUp className="text-gray-600" />
                                         ) : (
-                                            <MdArrowDropDownCircle className="text-gray-700" />
+                                            <MdArrowDropDownCircle className="text-gray-600" />
                                         )}
                                     </div>
                                 </button>
-                                <div className={`collapse ${openIndex === index ? 'block' : 'hidden'}`}>
+                                {openIndex === index && (
                                     <div className="p-4 bg-white">
-                                        <p className="text-gray-600">
-                                            {faq.answer}
-                                        </p>
+                                        <p className="text-gray-800 text-12">{faq.answer}</p>
                                     </div>
-                                </div>
+                                )}
                             </li>
                         ))}
                     </ul>

@@ -55,11 +55,13 @@ const config: Config = {
         },
         blue: "#0000FF", 
         _gray:"#808080",
+        _gray_light:"#dadada",
         _base:"#D6E6E2",         // Background color
         _primary: "#FF0000",        // Primary color
         _red: "#FF0000",            // Red color
         _white: "#FFFFFF",          // White color
-        _black: "#000000",          // Black color
+        _black: "#000000", 
+        _yellow_gray:"#E4DCBF",         
       },
       fontWeight: {
         medium: "500", // Medium font weight
