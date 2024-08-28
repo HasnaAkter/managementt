@@ -124,3 +124,25 @@
   border-radius: 4px;
   background: #fafafa;
 }
+@keyframes sway {
+  0% {
+      transform: translateX(0);
+  }
+  25% {
+      transform: translateX(-10px) rotate(-2deg);
+  }
+  50% {
+      transform: translateX(0);
+  }
+  75% {
+      transform: translateX(10px) rotate(2deg);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+.animate-sway {
+  animation: sway 3s ease-in-out infinite;
+}
+
